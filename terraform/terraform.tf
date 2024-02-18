@@ -10,6 +10,7 @@ terraform {
       version = "~> 3.5.1"
     }
 
+
     tls = {
       source  = "hashicorp/tls"
       version = "~> 4.0.4"
@@ -27,9 +28,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "gitopsterrastate"
+    bucket = "terra-aks-388"
     key    = "terraform.tfstate"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 
   required_version = "~> 1.6.3"
