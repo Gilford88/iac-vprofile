@@ -32,6 +32,8 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Create print bucket name
+        run: echo "$BUCKET_TF_STATE"
         
       - name: Setup Terraform with specified verson on the runner
         uses: hashicorp/setup-terraform@v2
