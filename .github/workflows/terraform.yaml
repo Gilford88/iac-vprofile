@@ -70,7 +70,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
       
       - name: apple success
-        run: echo steps.apple.outcome
+        run: echo ${{ env.steps.apple.outcome}}
 
       - name: Get Kube config file
         id: getconfig

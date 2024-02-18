@@ -25,7 +25,6 @@ module "eks" {
       desired_size = 2
     }
 
-
     two = {
       name = "node-group-2"
 
