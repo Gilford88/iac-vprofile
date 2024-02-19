@@ -59,7 +59,7 @@ jobs:
       
       - name: Terraform Apply
         id: apple
-        if: github.ref == 'refs/head/main' && github.event.name == 'push'
+        if: github.ref == 'refs/head/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false -parallelism=1 planfile
 
       - name: Configure AWS credentials
@@ -68,9 +68,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: ${{ env.AWS_REGION }}
-      
-      - name: apple success
-        run: echo ${{ env.steps.apple.outcome}}
 
       - name: Get Kube config file
         id: getconfig
